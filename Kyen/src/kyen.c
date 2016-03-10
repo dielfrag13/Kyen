@@ -11,8 +11,10 @@ int main(int argc, char **argv) {
     }
     
     board_t *board = create_board(5, 5);
+    printf("1\n");
     int val = print_board(board);
+    printf("2\n");
     val = free_board(board);
-    printf("val\n", val);
+    printf("%i\n", val);
     return 0;
 }
