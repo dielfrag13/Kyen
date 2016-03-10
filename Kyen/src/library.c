@@ -14,6 +14,8 @@ int print_board(board_t *board) {
     return 1;
 
 }
+
+
 board_t *create_board(int x, int y) {
     printf("create_board\n");
     board_t *board = malloc(sizeof(board_t));
@@ -28,6 +30,10 @@ board_t *create_board(int x, int y) {
         for (j=0; j < y; j++)
             board->matrix[i][j] = '.';
     }
+    board->location.x = board->x / 2; /*set player loc to middle*/
+    board->location.y = board->y / 2; /*         "    "         */
+
+    update_player(board, board->location, 'p');
 
     return board;
 
@@ -42,5 +48,11 @@ int free_board(board_t *board) {
     free(board->matrix);
     free(board);
     return 1;
+
+}
+
+void update_player(board_t *board, location_t loc, char c) {
+
+    board->matrix[loc.x][loc.y] = c;
 
 }
