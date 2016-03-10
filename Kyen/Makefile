@@ -19,7 +19,7 @@ PROJS := kyen
 
 # binname1 := obj1 obj2 obj3
 # binname2 := obj1 obj3 obj4
-kyen := kyen
+kyen := library kyen
 
 
 # Custom clean commands to be automatically executed when 'make clean' is run
